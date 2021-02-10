@@ -17,7 +17,6 @@ router.post('/', (req, res) => {
   const { email, password } = req.body;
   
   // Simple Validation
-  console.log(req.body);
   if(!email || !password) {
     return res.status(400).json({ msg: "모든 필드를 채워주세요" });
   }
