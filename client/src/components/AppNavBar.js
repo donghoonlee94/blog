@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Navbar, Container, NavbarToggler, Collapse, Nav } from "reactstrap";
 import { Link } from "react-router-dom";
+import LoginModal from '../components/auth/LoginModal'
 
 const AppNavbar = () => {
   return (
@@ -8,7 +9,7 @@ const AppNavbar = () => {
       <Navbar color="dark" dark expand="lg" className="sticky-top">
         <Container>
           <Link to="/" className="text-white text-decoration-none">
-            Side Project's Blog(사플 블로그)
+            Side Project's Blog
           </Link>
           <NavbarToggler />
           <Collapse isOpen={true} navbar>
@@ -16,7 +17,7 @@ const AppNavbar = () => {
               {false ? (
                 <h1 className="text-white">authLink</h1>
               ) : (
-                <h1 className="text-white">guestLink</h1>
+                <LoginModal />
               )}
             </Nav>
           </Collapse>
