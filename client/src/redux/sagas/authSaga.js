@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { all, put, takeEvery, call, fork } from 'redux-saga/effects'
-import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from '../types'
+import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT_FAILURE, LOGOUT_REQUEST, LOGOUT_SUCCESS } from '../types'
 
 
 
@@ -33,14 +33,35 @@ function* loginUser(action) {
   }
 }
 
-// LOGIN_REQUEST 액션이 들어오면 loginUser 실행
+// LOGIN_REQUEST 액션이 들어오면 loginUser를 실행하고 take해온 action을 넘겨준다.
 function* watchLoginUser() {
-  yield takeEvery(LOGIN_REQUEST, loginUser)
+  yield takeEvery(LOGIN_REQUEST, loginUser) 
+}
+
+
+// LOGOUT
+function* logout(action) {
+  try{
+    yield put({
+      type: LOGOUT_SUCCESS,
+    })
+  }catch(e) {
+    yield put({
+      type: LOGOUT_FAILURE,
+    });
+    console.log('LOGOUT',e);
+  }
+}
+
+
+function* watchLogout() {
+  yield takeEvery(LOGOUT_REQUEST, logout) 
 }
 
 export default function* authSaga() {
   // fork = 순서 상관 없는 비동기 실행 
   yield all([
-    fork(watchLoginUser)
+    fork(watchLoginUser),
+    fork(watchLogout),
   ])
 }
