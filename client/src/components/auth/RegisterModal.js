@@ -1,6 +1,6 @@
-import REact, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Alert, Button, Form, FormGroup, Input, Label, ModalBody, NavLink } from 'reactstrap';
+import { Alert, Button, Form, FormGroup, Input, Label, ModalBody, NavLink, Modal, ModalHeader } from 'reactstrap';
 import { CLEAR_ERROR_REQUEST, REGISTER_REQUEST } from '../../redux/types';
 
 const RegisterModal = () => {
