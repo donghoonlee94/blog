@@ -5,7 +5,4 @@ import loadUser from './components/auth/loadUser';
 
 loadUser();
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));

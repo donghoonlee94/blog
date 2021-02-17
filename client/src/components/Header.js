@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap';
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
 export default Header;

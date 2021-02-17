@@ -1,5 +1,5 @@
-import React, { Fragment } from'react';
-import Header from '../components/Header'
+import React, { Fragment } from 'react';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AppNavBar from '../components/AppNavBar';
 import { Container } from 'reactstrap';
@@ -11,7 +11,7 @@ import CategoryResult from './normalRoute/CategoryResult';
 import { Redirect, Switch, Route } from 'react-router-dom';
 
 const MyRouter = () => (
-  // vue teamplete? 같은 개념, 
+  // vue teamplete? 같은 개념,
   <Fragment>
     <AppNavBar />
     <Header />
@@ -27,6 +27,6 @@ const MyRouter = () => (
     </Container>
     <Footer />
   </Fragment>
-)
+);
 
 export default MyRouter;
