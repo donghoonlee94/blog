@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {} from 'react-helmet';
 import { POST_DETAIL_LOADING_REQUEST, POST_DELETE_REQUEST, USER_LOADING_REQUEST } from '../../redux/types';
-import { Col, Row } from 'reactstrap';
+import { Col, Row, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import CKEditor from '@ckeditor/ckeditor5-react';
 
@@ -42,7 +42,7 @@ const PostDetail = (req) => {
           </Link>
         </Col>
         <Col className="col-md-3 mr-md-3">
-          <Link to={`/post/${req.match.parasm.id}/edit`} className="btn btn-success btn-block">
+          <Link to={`/post/${req.match.params.id}/edit`} className="btn btn-success btn-block">
             Edit Post
           </Link>
         </Col>
