@@ -153,7 +153,7 @@ router.get('/:id', async (req, res, next) => {
 router.get('/:id/comments', async (req, res) => {
   try {
     const comment = await Post.findById(req.params.id).populate({
-      path: 'comment',
+      path: 'comments',
     });
     const result = comment.comments;
     console.log(result, 'comment load');
