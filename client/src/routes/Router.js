@@ -9,6 +9,8 @@ import PostDetail from './normalRoute/PostDetail';
 import Search from './normalRoute/Search';
 import CategoryResult from './normalRoute/CategoryResult';
 import { Redirect, Switch, Route } from 'react-router-dom';
+import { EditProtectedRoute, ProfileProtectedRoute } from './protectedRoute/ProtectedRoute';
+import PostEdit from './normalRoute/PostEdit';
 
 const MyRouter = () => (
   // vue teamplete? 같은 개념,
@@ -20,6 +22,7 @@ const MyRouter = () => (
         <Route path="/" exact component={PostCardList} />
         <Route path="/post" exact component={PostWrite} />
         <Route path="/post/:id" exact component={PostDetail} />
+        <EditProtectedRoute path="/post/:id/edit" exact component={PostEdit} />
         <Route path="/post/category/:categoryName" exact component={CategoryResult} />
         <Route path="/search/:searchTerm" exact component={Search} />
         <Redirect from="*" to="/" />
