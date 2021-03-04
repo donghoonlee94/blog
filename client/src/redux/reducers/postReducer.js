@@ -14,6 +14,9 @@ import {
   POST_EDIT_UPLOADING_REQUEST,
   POST_EDIT_UPLOADING_SUCCESS,
   POST_EDIT_UPLOADING_FAILURE,
+  CATEGORY_FIND_REQUEST,
+  CATEGORY_FIND_SUCCESS,
+  CATEGORY_FIND_FAILURE,
 } from '../types';
 
 const initialState = {
@@ -41,7 +44,8 @@ export default function (state = initialState, action) {
     case POSTS_LOADING_SUCCESS:
       return {
         ...state,
-        posts: [...state.posts, ...action.payload],
+        posts: [...state.posts, ...action.payload.postFindResult],
+        categoryFindResult: action.payload.categoryFindResult,
         loading: false,
       };
     case POSTS_LOADING_FAILURE:
