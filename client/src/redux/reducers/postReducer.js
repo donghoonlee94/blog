@@ -152,7 +152,6 @@ export default function (state = initialState, action) {
       return {
         ...state,
         posts: [],
-        searchBy: action.payload,
         loading: true,
       };
     case SEARCH_SUCCESS:
