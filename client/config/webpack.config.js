@@ -401,6 +401,7 @@ module.exports = function (webpackEnv) {
                       },
                     },
                   ],
+                  ['transform-remove-console', { exclude: ['error', 'warn'] }],
                   isEnvDevelopment && shouldUseReactRefresh && require.resolve('react-refresh/babel'),
                 ].filter(Boolean),
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
