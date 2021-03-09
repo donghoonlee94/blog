@@ -11,6 +11,7 @@ import CategoryResult from './normalRoute/CategoryResult';
 import { Redirect, Switch, Route } from 'react-router-dom';
 import { EditProtectedRoute, ProfileProtectedRoute } from './protectedRoute/ProtectedRoute';
 import PostEdit from './normalRoute/PostEdit';
+import Profile from './normalRoute/Profile';
 
 const MyRouter = () => (
   // vue teamplete? 같은 개념,
@@ -25,6 +26,7 @@ const MyRouter = () => (
         <EditProtectedRoute path="/post/:id/edit" exact component={PostEdit} />
         <Route path="/post/category/:categoryName" exact component={CategoryResult} />
         <Route path="/search/:searchTerm" exact component={Search} />
+        <ProfileProtectedRoute path="/user/:userName/profile" exact component={Profile} />
         <Redirect from="*" to="/" />
       </Switch>
     </Container>
