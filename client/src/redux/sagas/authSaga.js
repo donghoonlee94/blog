@@ -178,7 +178,7 @@ function* EditPassword(action) {
     const result = yield call(EditPasswordAPI, action.payload);
     yield put({
       type: PASSWORD_EDIT_UPLOADING_SUCCESS,
-      payload: result.data,
+      payload: result,
     });
   } catch (e) {
     yield put({

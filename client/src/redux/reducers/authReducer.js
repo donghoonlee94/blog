@@ -14,6 +14,9 @@ import {
   USER_LOADING_FAILURE,
   USER_LOADING_REQUEST,
   USER_LOADING_SUCCESS,
+  PASSWORD_EDIT_UPLOADING_SUCCESS,
+  PASSWORD_EDIT_UPLOADING_REQUEST,
+  PASSWORD_EDIT_UPLOADING_FAILURE,
 } from '../types';
 
 const initialState = {
@@ -118,8 +121,8 @@ const authReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         successMsg: '',
-        errorMsg: action.payload.fail_msg,
-        previousMatchMsg: action.payload.match_msg,
+        errorMsg: action.payload.data.fail_msg,
+        previousMatchMsg: action.payload.data.match_msg,
       };
     case CLEAR_ERROR_REQUEST:
       return {
